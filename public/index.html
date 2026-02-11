@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ετήσιο Φυλλάδιο Συστήματος</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <h1>Ετήσιο Φυλλάδιο Συστήματος</h1>
+      <div id="userBox" class="userbox"></div>
+    </header>
+
+    <section id="authView" class="card">
+      <h2>Σύνδεση / Εγγραφή</h2>
+      <div class="grid2">
+        <div>
+          <h3>Σύνδεση</h3>
+          <label>Email</label>
+          <input id="loginEmail" type="email" placeholder="you@example.com" />
+          <label>Κωδικός</label>
+          <input id="loginPass" type="password" placeholder="********" />
+          <button id="btnLogin">Σύνδεση</button>
+        </div>
+        <div>
+          <h3>Εγγραφή</h3>
+          <label>Email</label>
+          <input id="regEmail" type="email" placeholder="you@example.com" />
+          <label>Κωδικός (>= 8 χαρακτήρες)</label>
+          <input id="regPass" type="password" placeholder="********" />
+          <button id="btnRegister">Εγγραφή</button>
+        </div>
+      </div>
+      <p id="authMsg" class="msg"></p>
+    </section>
+
+    <section id="appView" class="card hidden">
+      <div class="toolbar">
+        <div class="row">
+          <label>Έτος</label>
+          <input id="yearInput" type="number" min="2000" max="2100" />
+          <button id="btnLoad">Φόρτωση</button>
+          <button id="btnSave">Αποθήκευση</button>
+        </div>
+        <div class="row">
+          <strong>Ιστορικό</strong>
+          <select id="yearHistory"></select>
+        </div>
+      </div>
+
+      <h2 id="formTitle">Φυλλάδιο</h2>
+
+      <form id="annualForm">
+        <h3>A. KPIs</h3>
+        <div class="grid3">
+          <div><label>Μέλη (σύνολο)</label><input name="kpi_members_total" type="number" /></div>
+          <div><label>Νέες εγγραφές</label><input name="kpi_new_members" type="number" /></div>
+          <div><label>Retention %</label><input name="kpi_retention" type="number" step="0.1" /></div>
+          <div><label>Νέοι Βαθμοφόροι</label><input name="kpi_new_leaders" type="number" /></div>
+          <div><label>Εκπαιδευτική κάλυψη %</label><input name="kpi_training_coverage" type="number" step="0.1" /></div>
+          <div><label>Ισοζύγιο (€)</label><input name="kpi_balance_eur" type="number" step="0.01" /></div>
+        </div>
+
+        <h3>B. Διακυβέρνηση & Συμμόρφωση</h3>
+        <div class="grid2">
+          <label class="check"><input type="checkbox" name="gov_annual_review_done" /> Έγινε ετήσια αξιολόγηση Α.Σ.</label>
+          <label class="check"><input type="checkbox" name="gov_risk_register_updated" /> Επικαιροποιήθηκε Risk Register</label>
+          <label class="check"><input type="checkbox" name="gov_safeguarding_compliant" /> Safeguarding συμμόρφωση (100%)</label>
+          <label class="check"><input type="checkbox" name="gov_fin_report_ready" /> Οικονομική αναφορά έτοιμη</label>
+        </div>
+
+        <h3>C. Risk Register</h3>
+        <div class="grid2">
+          <div><label>Top Risk 1</label><input name="risk1" /></div>
+          <div><label>Mitigation 1</label><input name="risk1_mitigation" /></div>
+          <div><label>Top Risk 2</label><input name="risk2" /></div>
+          <div><label>Mitigation 2</label><input name="risk2_mitigation" /></div>
+        </div>
+
+        <h3>D. Σημειώσεις / Απολογισμός</h3>
+        <textarea name="notes" rows="6"></textarea>
+      </form>
+
+      <p id="appMsg" class="msg"></p>
+    </section>
+
+    <footer class="foot">
+      <small>Ετήσιο φυλλάδιο με ιστορικό ανά έτος.</small>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
